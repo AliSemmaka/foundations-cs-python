@@ -8,9 +8,40 @@ Created on Thu Nov 23 00:54:18 2023
 #title
 #URL
 #which tab is open
-# tabs=[]
-# tab={title:"google", url:"https://www.bing.com", tabs=[]}
 
+# tab={title:"google", url:"https://www.bing.com", tabs=[]} 
+
+#OR
+
+#tab={} 
+# tab ['title']=google
+# tab ['url']=https://www.bing.com
+# tab ['tabs']=[]
+
+tabs=[]
+open_tab_index=0
+
+def open_tab():
+    title_input= str(input("Insert Title: "))
+    url_input= str(input("Insert URL: "))
+    
+    new_tab= {'title': title_input, 'url': url_input, 'sub_tabs':[]}
+    tabs.append(new_tab)
+    open_tab_index=len(tabs)
+    #print(open_tab_index)
+    
+def close_tab():
+    tab_index_input= int(input("Insert the index of tab you want to close: "))
+    if tab_index_input >= 0:
+        tabs.remove(tab_index_input)
+    elif tab_index_input == ():
+        tabs.remove()
+    else:
+        print("invalid input")
+        tab_index_input= int(input("Insert the index of tab you want to close: "))
+        
+        
+        
 
 def mainMenu(): 
  choice = -99  
@@ -26,9 +57,7 @@ def mainMenu():
     print("8. To import tabs")
     print("9. To exit")
 
-
-
-    
+ 
     choice = int(input("Choice: "))
     
     
