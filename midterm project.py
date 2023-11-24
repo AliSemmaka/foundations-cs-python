@@ -32,13 +32,16 @@ def open_tab():
     
 def close_tab():
     tab_index_input= int(input("Insert the index of tab you want to close: "))
-    if tab_index_input >= 0:
-        tabs.remove(tab_index_input)
+    if 0 <= tab_index_input < len(tabs):
+        removed_tab= tabs.pop(tab_index_input)
+        print(f"Tab {removed_tab} removed from the list.")
+        print("Updated list:", tabs)
     elif tab_index_input == ():
-        tabs.remove()
+        tabs.remove()       
     else:
-        print("invalid input")
+        print("invalid index. Please insert a valid index.")
         tab_index_input= int(input("Insert the index of tab you want to close: "))
+        
         
         
         
